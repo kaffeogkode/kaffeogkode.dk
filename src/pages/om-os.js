@@ -1,6 +1,4 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
@@ -15,7 +13,7 @@ const OmOsPage = () => (
       Idéen som startede som et podcast blev til en livestream på Twitch. Vores koncept er nu at livestreame vores projekter, 
       som derefter vil danne indhold for vores podcasts. 
     </p>
-    <p>Så kom og ta' en kaffe med os! ☕️</p>
+    <p>Så kom og ta' en kaffe med os! <span role="img" aria-label="coffee">☕️</span></p>
 
     <br></br>
     <h1>Om os</h1>
