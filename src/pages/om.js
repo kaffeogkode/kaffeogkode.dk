@@ -2,9 +2,9 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const OmOsPage = () => (
+const OmPage = () => (
   <Layout>
-    <SEO title="Om os" />
+    <SEO title="Om Kaffe &amp; Kode" />
     <h1>Idéen bag</h1>
     <p>I 2018 blev frøet sået til Kaffe & Kode efter at have arbejdet sammen i ABC Softwork. Vi sad selv med kaffe og kode, 
       og det blev rutinen at mødes i kaffebaren.
@@ -16,7 +16,7 @@ const OmOsPage = () => (
     <p>Så kom og ta' en kaffe med os! <span role="img" aria-label="coffee">☕️</span></p>
 
     <br></br>
-    <h1>Om os</h1>
+    <h1>Hvem er vi?</h1>
     <h2>Isabella</h2>
     <p>Isabella har en kandidat i softwareudvikling med speciale indenfor kunstig intelligens og machine learning.
        Isabellas yndlingskaffe er en <i>smooth</i> cappucino.</p>
@@ -27,4 +27,4 @@ const OmOsPage = () => (
   </Layout>
 )
 
-export default OmOsPage
+export default OmPage

@@ -14,7 +14,7 @@ const Menu = () => {
         <nav className="menu">
             <Link to="/" title="Forside"><FontAwesomeIcon icon="home" /></Link>
             <Link to="/projekter" title="Projekter"><FontAwesomeIcon icon="clipboard-list" /></Link>
-            <Link to="/om-os" title="Om Kaffe &amp; Kode"><FontAwesomeIcon icon="poo" /></Link>
+            <Link to="/om" title="Om Kaffe &amp; Kode"><FontAwesomeIcon icon="poo" /></Link>
             <a href="https://twitch.tv/kaffeogkode" title="Vores Twitch-kanal"><FontAwesomeIcon icon={["fab", "twitch"]} /></a>
             <a href="https://twitter.com/kaffeogkode" title="Vores Twitter"><FontAwesomeIcon icon={["fab", "twitter"]} /></a>
             <a href="https://www.youtube.com/channel/UCnvLGoN3BB5OZdY0XW6IMtw" title="Vores YouTube-kanal"><FontAwesomeIcon icon={["fab", "youtube"]} /></a>
