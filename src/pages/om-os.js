@@ -20,7 +20,7 @@ const OmOsPage = () => (
     <h2>Isabella</h2>
     <p>Isabella har en kandidat i softwareudvikling med speciale indenfor kunstig intelligens og machine learning.
        Isabellas yndlingskaffe er en <i>smooth</i> cappucino.</p>
-    <p><a href="https://www.ikarpf.com/">https://www.isabellakarpf.com/</a></p>
+    <p><a href="https://www.ikarpf.com/">https://www.ikarpf.com/</a></p>
     <h2>Michael</h2>
     <p>Michael er uddannet ingeniør og CTO i <a href="https://abcsoftwork.com/">ABC Softwork</a>. Michaels yndlingskaffe er en dobbelt café latte.</p>
     <p><a href="https://michaelbanzon.com/">https://michaelbanzon.com/</a></p>
