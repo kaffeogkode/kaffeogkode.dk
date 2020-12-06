@@ -10,6 +10,7 @@ const query = graphql`
     edges {
       node {
         title
+        excerpt
         slug
         acf {
           github
