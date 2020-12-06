@@ -39,7 +39,7 @@ const Menu = () => {
                     <Nav.Link as={Link} to="/projekter">Projekter</Nav.Link>
                   </Nav>
                   <Nav className="mr-auto">
-                    {edges.sort((a, b) => parseInt( a.node.acf.order ?? 0 ) - parseInt( b.node.acf.order ?? 0)).map(p =>
+                    {edges.sort((a, b) => parseInt(a.node.acf.order ?? 0) - parseInt(b.node.acf.order ?? 0)).map(p =>
                       <Nav.Link as={Link} to={`/${p.node.slug}`}><span dangerouslySetInnerHTML={{ __html: p.node.title }} /></Nav.Link>
                     )}
                   </Nav>
