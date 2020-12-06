@@ -1,21 +1,22 @@
-.menu {
-    color: white;
-    background-color: #6F4E37;
-    padding: 25px;
-    margin-bottom: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: 120%;
+#kk-navbar {
+    color: white !important;
+    background-color: #6F4E37 !important;
 }
 
-.menu a {
+#kk-navbar a {
     color: inherit;
     text-decoration: none;
-    padding: 15px;
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.menu a:hover {
+#kk-navbar a:hover {
     color: #6F4E37;
     background-color: white;
+}
+
+#kk-navbar>.container>.navbar-brand:hover {
+    color: inherit !important;
+    background-color:inherit !important;
 }

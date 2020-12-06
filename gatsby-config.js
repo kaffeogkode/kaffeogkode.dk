@@ -1,3 +1,12 @@
+// require("dotenv").config({
+//   path: `.env.${process.env.NODE_ENV}`,
+// })
+
+
+require("dotenv").config()
+// import dotenv from 'dotenv'
+// dotenv.config()
+
 module.exports = {
   siteMetadata: {
     title: `Kaffe & Kode`,
@@ -27,5 +36,24 @@ module.exports = {
         icon: `src/images/k-og-k-icon.png`, // This path is relative to the root of the site.
       },
     },
+		{
+			resolve: `gatsby-source-wordpress`,
+			options: {
+			  baseUrl: process.env.WP_API_BASE,
+			  protocol: `https`,
+			  hostingWPCOM: false,
+			  useACF: true,
+			  plugins: [
+				{
+				  resolve: `gatsby-wordpress-inline-images`,
+				//   options:
+				//   {
+				// 	baseUrl: `localhost:8888/wordpress`,
+				// 	protocol: `http`
+				//   }
+				}
+			  ]
+			},
+		  },
   ],
 }

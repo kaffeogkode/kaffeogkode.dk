@@ -1,26 +1,55 @@
 import React from "react"
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fab, faYoutube, faTwitch, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faHome, faClipboardList, faPoo } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { graphql, Link, StaticQuery } from "gatsby"
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from 'react-bootstrap/Navbar'
+import Container from 'react-bootstrap/Container'
+import Nav from 'react-bootstrap/Nav'
 import './menu.css'
-import { Link } from "gatsby"
 
-library.add(fab, faYoutube, faTwitch, faTwitter, faGithub, faHome, faClipboardList, faPoo )
+const query = graphql`
+{
+  allWordpressPage {
+    edges {
+      node {
+        title
+        slug
+        acf {
+          order
+        }
+      }
+    }
+  }
+}
+`
 
 const Menu = () => {
   return (
-    <>
-        <nav className="menu">
-            <Link to="/" title="Forside"><FontAwesomeIcon icon="home" /></Link>
-            <Link to="/projekter" title="Projekter"><FontAwesomeIcon icon="clipboard-list" /></Link>
-            <Link to="/om" title="Om Kaffe &amp; Kode"><FontAwesomeIcon icon="poo" /></Link>
-            <a href="https://twitch.tv/kaffeogkode" title="Vores Twitch-kanal"><FontAwesomeIcon icon={["fab", "twitch"]} /></a>
-            <a href="https://twitter.com/kaffeogkode" title="Vores Twitter"><FontAwesomeIcon icon={["fab", "twitter"]} /></a>
-            <a href="https://www.youtube.com/channel/UCnvLGoN3BB5OZdY0XW6IMtw" title="Vores YouTube-kanal"><FontAwesomeIcon icon={["fab", "youtube"]} /></a>
-            <a href="https://github.com/kaffeogkode" title="Vores GitHub"><FontAwesomeIcon icon={["fab", "github"]} /></a>
-        </nav>
-    </>
+    <StaticQuery
+      query={query}
+      render={
+        data => {
+          const edges = data.allWordpressPage.edges ?? []
+          return (
+            <Navbar id="kk-navbar" expand="lg" variant="light" bg="light" fixed="top">
+              <Container>
+                <Navbar.Brand as={Link} to="/">Kaffe &amp; Kode</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Collapse id="basic-navbar-nav">
+                  <Nav>
+                    <Nav.Link as={Link} to="/projekter">Projekter</Nav.Link>
+                  </Nav>
+                  <Nav className="mr-auto">
+                    {edges.sort((a, b) => parseInt( a.node.acf.order ?? 0 ) - parseInt( b.node.acf.order ?? 0)).map(p =>
+                      <Nav.Link as={Link} to={`/${p.node.slug}`}><span dangerouslySetInnerHTML={{ __html: p.node.title }} /></Nav.Link>
+                    )}
+                  </Nav>
+                </Navbar.Collapse>
+              </Container>
+            </Navbar>
+          )
+        }
+      }/>
+
   )
 }
 
