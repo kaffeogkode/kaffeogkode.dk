@@ -4,7 +4,7 @@ import React from 'react'
 const ProjectPreview = ({p}) => (
     <>
         <h2>{p.title}</h2>
-        <p>{p.exerpt}</p>
+        <p>{p.excerpt}</p>
         <Link to={`/projekt/${p.slug}`}>Læs mere</Link>
         <hr />
     </>
